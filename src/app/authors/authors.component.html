@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Autores </h2>
+        
+        <div class="card-text">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let author of authors">
+                            <td> <a routerLink="/authors/{{author.name}}">{{author.name}}</a></td>
+                            <td>{{author.age}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-primary btn-block" routerLink="/create-author">Agregar</button>
+        </div>
+    </div>
+</div>
