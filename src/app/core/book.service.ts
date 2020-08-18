@@ -20,6 +20,22 @@ export class BookService {
       );
   }
 
+  getBook(id : number) : Observable<Book>{
+    return this.httpClient.get<Book>(`${this.baseUrl}/${id}`)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  borrow(id : number){
+    return this.httpClient.post(`${this.baseUrl}/${id}/borrowings`, null);
+  }
+
+  
+  return(id : number){
+    return this.httpClient.delete(`${this.baseUrl}/${id}/borrowings`);
+  }
+
   private handleError(error : any){
     console.error('server error:', error);
     if(error.error instanceof Error){

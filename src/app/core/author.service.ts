@@ -20,6 +20,13 @@ export class AuthorService {
     );
   }
 
+  addAuthor(author : Author){
+    return this.httpClient.post(this.baseUrl, author)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error : any){
     console.error('server error:', error);
     if(error.error instanceof Error){

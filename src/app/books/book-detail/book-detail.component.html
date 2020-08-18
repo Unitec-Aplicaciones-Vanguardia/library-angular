@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">{{ bookName }}</h2>
+        <div class="card-text">
+            <div class="form-group">
+                Nombre:
+                <input [value]="book.name" disabled class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                Fecha de publicación:
+                <input [value]="book.publishedOn" disabled class="form-control" type="datetime">
+            </div>
+            <div class="form-group">
+                Nombre autor:
+                <input [value]="book.author" disabled class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                Cantidad de copias:
+                <input [value]="book.copies" disabled class="form-control" type="number">
+            </div>
+
+            <button class="btn btn-block btn-success" (click)="borrowBook()" >Prestar</button>
+            <button class="btn btn-block btn-danger" (click)="returnBook()">Retornar</button>
+
+        </div>
+    </div>
+</div>
